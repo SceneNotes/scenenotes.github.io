@@ -34,7 +34,8 @@ img { display: block; max-width: 100%; }
 .hero__content { padding: 0 clamp(24px, 9vw, 150px); margin: auto 0; max-width: 1020px; }
 .overline { display: flex; align-items: center; gap: 14px; letter-spacing: .23em; font-size: .77rem; font-weight: 700; }
 .overline__line { width: 38px; height: 2px; background: var(--accent); }
-.hero h1 { font: 500 clamp(3rem, 6.3vw, 6.5rem)/1.45 var(--serif); letter-spacing: -.035em; margin: 30px 0 22px; }
+.hero h1 { font: 500 clamp(2.25rem, 4.1vw, 4.25rem)/1.38 var(--serif); letter-spacing: -.04em; margin: 30px 0 22px; }
+.hero h1 span, .hero h1 em { display: block; white-space: nowrap; }
 .hero h1 em { color: #ff9b55; font-style: normal; }
 .hero__lead { margin: 0; font-size: clamp(.96rem, 1.3vw, 1.1rem); line-height: 2; color: #f1eee8; }
 .hero__bottom { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 0 clamp(24px, 5vw, 78px) 32px; font-size: .76rem; font-weight: 700; letter-spacing: .15em; }
@@ -44,7 +45,7 @@ img { display: block; max-width: 100%; }
 .intro { padding-block: clamp(88px, 11vw, 155px) clamp(78px, 9vw, 125px); display: grid; grid-template-columns: .7fr 1.3fr; gap: 8vw; align-items: start; }
 .intro__label { display: flex; flex-direction: column; gap: 14px; font-size: .78rem; letter-spacing: .18em; color: var(--muted); }
 .section-number { color: var(--accent); font-weight: 700; }
-.intro h2 { margin: -13px 0 0; font: 500 clamp(2rem, 3.3vw, 3.75rem)/1.6 var(--serif); letter-spacing: -.03em; }
+.intro h2 { margin: -8px 0 0; font: 500 clamp(1.9rem, 2.7vw, 3rem)/1.55 var(--serif); letter-spacing: -.035em; }
 .intro strong { color: #d35c17; font-weight: 500; }
 
 .gallery { padding-bottom: 130px; scroll-margin-top: 24px; }
@@ -109,10 +110,10 @@ img { display: block; max-width: 100%; }
   .hero__shade { background: linear-gradient(90deg, #11140eb8, #11140e50), linear-gradient(0deg, #11140e88, transparent 45%); }
   .site-header { padding: 22px; }
   .hero__content { padding: 0 24px; }
-  .hero h1 { font-size: clamp(2.7rem, 9.5vw, 4.7rem); }
+  .hero h1 { font-size: clamp(1.6rem, 7.5vw, 3.8rem); }
   .hero__bottom { padding-inline: 24px; }
   .intro { grid-template-columns: 1fr; gap: 32px; }
-  .intro h2 { margin: 0; }
+  .intro h2 { margin: 0; font-size: clamp(1.25rem, 5.65vw, 2.35rem); }
   .gallery__count { display: none; }
   .gallery__controls { display: block; }
   .category-filters { margin-bottom: 18px; }
