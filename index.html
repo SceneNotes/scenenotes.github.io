@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#24231f">
+    <meta name="description" content="SceneNotes — 植物、動物、モノ、風景を記録する写真ギャラリー。">
+    <title>SceneNotes | 写真の記録</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/photos.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <img class="hero__image" src="assets/photos/cosmos.webp" alt="" fetchpriority="high">
+      <div class="hero__shade"></div>
+      <div class="site-header">
+        <a class="brand" href="#top" aria-label="SceneNotes ページの先頭へ"><span class="brand__mark" aria-hidden="true">S<span>.</span></span><span>SceneNotes</span></a>
+        <nav class="site-nav" aria-label="ページ内ナビゲーション"><a href="#gallery">Gallery</a><a href="#about">About</a></nav>
+      </div>
+      <div class="hero__content">
+        <p class="overline"><span class="overline__line"></span> A PHOTOGRAPHIC JOURNAL</p>
+        <h1><span>目に留まった景色を、</span><em>ここに残す。</em></h1>
+        <p class="hero__lead">季節の色、川辺の生き物、何気ない日常。<br>一枚ずつ、記憶の中の場面を集めていく。</p>
+      </div>
+      <div class="hero__bottom"><span id="hero-range">SCENES / 001—006</span><a href="#gallery">写真を見る <span aria-hidden="true">↓</span></a></div>
+    </header>
+
+    <main>
+      <section class="intro container" id="about" aria-labelledby="intro-title">
+        <div class="intro__label"><span class="section-number">01 / ABOUT</span><span>SCENENOTES</span></div>
+        <h2 id="intro-title">見慣れた日々にも、<br><strong>見逃したくない一瞬</strong>がある。</h2>
+      </section>
+
+      <section class="gallery container" id="gallery" aria-labelledby="gallery-title">
+        <div class="gallery__heading">
+          <h2 id="gallery-title"><small>02 / COLLECTION</small>写真をたどる。</h2>
+          <p class="gallery__count" id="result-count" role="status" aria-live="polite"></p>
+        </div>
+        <div class="gallery__controls">
+          <div class="category-filters" role="group" aria-label="写真のジャンル">
+            <button type="button" class="filter is-active" data-category="all" aria-pressed="true">すべて</button>
+            <button type="button" class="filter" data-category="plant" aria-pressed="false">植物</button>
+            <button type="button" class="filter" data-category="animal" aria-pressed="false">動物</button>
+            <button type="button" class="filter" data-category="object" aria-pressed="false">モノ</button>
+            <button type="button" class="filter" data-category="landscape" aria-pressed="false">風景</button>
+          </div>
+          <label class="year-filter" for="year-filter"><span>撮影年</span><select id="year-filter"><option value="all">すべての年</option></select></label>
+        </div>
+        <div class="photo-grid" id="photo-grid"></div>
+        <div class="empty-state" id="empty-state" hidden><p>この条件に合う写真はありません。</p><button type="button" id="reset-filters">すべての写真を見る</button></div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <a class="brand brand--dark" href="#top"><span class="brand__mark" aria-hidden="true">S<span>.</span></span><span>SceneNotes</span></a>
+      <p>この版の写真と撮影情報はデザイン確認用のサンプルです。</p>
+    </footer>
+
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="写真の拡大表示" aria-hidden="true">
+      <div class="lightbox__top"><span id="lightbox-counter"></span><button type="button" class="icon-button" id="lightbox-close" aria-label="閉じる">×</button></div>
+      <button type="button" class="icon-button lightbox__nav lightbox__nav--prev" id="lightbox-prev" aria-label="前の写真">‹</button>
+      <div class="lightbox__content">
+        <img id="lightbox-image" alt="">
+        <div class="lightbox__caption"><strong id="lightbox-title"></strong><span id="lightbox-category"></span></div>
+        <details class="photo-info" id="photo-info">
+          <summary>撮影情報を表示</summary>
+          <dl>
+            <div data-field="year"><dt>撮影年</dt><dd id="photo-year"></dd></div>
+            <div data-field="camera"><dt>カメラ</dt><dd id="photo-camera"></dd></div>
+            <div data-field="lens"><dt>レンズ</dt><dd id="photo-lens"></dd></div>
+          </dl>
+          <p>デモ写真の撮影情報は表示例です。</p>
+        </details>
+      </div>
+      <button type="button" class="icon-button lightbox__nav lightbox__nav--next" id="lightbox-next" aria-label="次の写真">›</button>
+    </div>
+  </body>
+</html>
