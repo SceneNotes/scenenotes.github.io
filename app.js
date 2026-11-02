@@ -18,9 +18,9 @@ const galleries = {
       { src: './assets/landscape-03.webp', title: '山を映す水辺', alt: '湖畔から望む雪山' }
     ]
   },
-  wildlife: {
-    name: 'Wildlife', label: '野生動物', number: '02',
-    intro: '野生の動物たちが見せてくれる、かけがえのない瞬間。そっと距離を置いて見つめた風景。',
+  animals: {
+    name: 'Animals', label: '動物', number: '02',
+    intro: '身近な動物から野生の生きものまで、さまざまな表情や心に残る瞬間を集めました。',
     photos: [
       { src: './assets/wildlife.webp', title: '草原のシカ', alt: '柔らかな光の中に佇むシカ' },
       { src: './assets/wildlife-02.webp', title: '森での出会い', alt: '林の中に立つ角のあるシカ' },
@@ -95,7 +95,8 @@ window.addEventListener('keydown', e => {
 });
 
 function getRoute() {
-  return (location.hash.match(/^#\/([a-z-]+)\/?$/) || [])[1] || 'home';
+  const route = (location.hash.match(/^#\/([a-z-]+)\/?$/) || [])[1] || 'home';
+  return route === 'wildlife' ? 'animals' : route;
 }
 const backLink = '<a class="back-link" href="#/home"><svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>Back to Home</a>';
 
@@ -125,7 +126,7 @@ function renderAbout() {
     <div class="inner-divider"></div>
     <div class="about-layout">
       <div class="about-photo"><img src="./assets/landscape-wide.webp" alt="穏やかな朝の山並みと湖" loading="lazy"></div>
-      <div class="about-copy"><h2>心に残った景色を、<br>そっと記録する。</h2><p>Scene Notes は、風景、野生動物、日常のものたちを写真で綴る小さなノートです。<br>ページをめくるように、気になったカテゴリーからゆっくり眺めてください。</p><p>このサイトの写真と文章はサンプルです。公開するときに、ご自身の作品や紹介文に差し替えられます。</p></div>
+      <div class="about-copy"><h2>心に残った景色を、<br>そっと記録する。</h2><p>Scene Notes は、風景、動物、日常のものたちを写真で綴る小さなノートです。<br>ページをめくるように、気になったカテゴリーからゆっくり眺めてください。</p><p>このサイトの写真と文章はサンプルです。公開するときに、ご自身の作品や紹介文に差し替えられます。</p></div>
     </div>${backLink}`;
 }
 

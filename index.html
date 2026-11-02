@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f5f2ec">
-  <meta name="description" content="Scene Notes — 風景、野生動物、日常のものたち。心に残った景色を静かに記録するフォトノート。">
+  <meta name="description" content="Scene Notes — 風景、動物、日常のものたち。心に残った景色を静かに記録するフォトノート。">
   <title>Scene Notes | A photography notebook</title>
   <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="./styles.css?v=3">
+  <link rel="stylesheet" href="./styles.css?v=4">
   <script>
     try {
       document.documentElement.dataset.theme = localStorage.getItem('scene-notes-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
     } catch (e) { document.documentElement.dataset.theme = 'light'; }
   </script>
-  <script src="./app.js?v=6" defer></script>
+  <script src="./app.js?v=7" defer></script>
 </head>
 <body>
   <!-- SVG icon library: local and independent from any CDN -->
@@ -47,7 +47,7 @@
       <nav class="side-navigation" aria-label="メインナビゲーション">
         <a class="nav-link" href="#/home" data-route="home"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg><span>Home</span></a>
         <a class="nav-link" href="#/landscape" data-route="landscape"><svg class="icon" aria-hidden="true"><use href="#i-mountain"/></svg><span>Landscape</span></a>
-        <a class="nav-link" href="#/wildlife" data-route="wildlife"><svg class="icon" aria-hidden="true"><use href="#i-paw"/></svg><span>Wildlife</span></a>
+        <a class="nav-link" href="#/animals" data-route="animals"><svg class="icon" aria-hidden="true"><use href="#i-paw"/></svg><span>Animals</span></a>
         <a class="nav-link" href="#/objects" data-route="objects"><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><span>Objects</span></a>
         <a class="nav-link" href="#/about" data-route="about"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg><span>About</span></a>
       </nav>
@@ -92,10 +92,10 @@
               <p class="card-description">旅先で出会った風景や、<br>日常の中にある美しい景色。</p>
               <span class="card-cta"><span>View More</span><span class="text-chevron" aria-hidden="true"></span></span>
             </a>
-            <a class="category-card" href="#/wildlife" aria-label="Wildlife の写真を見る">
-              <div class="card-heading"><span class="card-number">02</span><span class="card-tick" aria-hidden="true"></span><h2>Wildlife</h2><span class="card-ja">野生動物</span></div>
+            <a class="category-card" href="#/animals" aria-label="Animals の写真を見る">
+              <div class="card-heading"><span class="card-number">02</span><span class="card-tick" aria-hidden="true"></span><h2>Animals</h2><span class="card-ja">動物</span></div>
               <img class="card-image" src="./assets/wildlife.webp" alt="草原に佇むシカ" width="970" height="526">
-              <p class="card-description">野生の動物たちが見せてくれる、<br>かけがえのない瞬間。</p>
+              <p class="card-description">動物たちの自然な姿や、<br>心に残る瞬間。</p>
               <span class="card-cta"><span>View More</span><span class="text-chevron" aria-hidden="true"></span></span>
             </a>
             <a class="category-card" href="#/objects" aria-label="Objects の写真を見る">
