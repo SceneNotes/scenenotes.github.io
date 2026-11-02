@@ -1,5 +1,11 @@
 'use strict';
 
+// リンク先を設定すると、サイドバーの各アイコンが有効になります。
+const socialLinks = {
+  instagram: '',
+  github: ''
+};
+
 // Scene Notes: sample photo entries. Replace file paths and captions with your own work.
 const galleries = {
   landscape: {
@@ -49,12 +55,26 @@ let routeAnimation;
 function setTheme(theme) {
   const selected = theme === 'dark' ? 'dark' : 'light';
   document.documentElement.dataset.theme = selected;
-  themeToggles.forEach(toggle => toggle.setAttribute('aria-label', selected === 'dark' ? 'ライトモードに切り替える' : 'ダークモードに切り替える'));
+  themeToggles.forEach(toggle => toggle.setAttribute('aria-checked', String(selected === 'dark')));
   document.querySelector('meta[name="theme-color"]').content = selected === 'dark' ? '#181e21' : '#f6f3ee';
   try { localStorage.setItem('scene-notes-theme', selected); } catch (e) { /* private window */ }
 }
 setTheme(document.documentElement.dataset.theme);
 themeToggles.forEach(toggle => toggle.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark')));
+
+document.querySelectorAll('[data-social]').forEach(link => {
+  const name = link.dataset.social === 'github' ? 'GitHub' : 'Instagram';
+  try {
+    const url = new URL(socialLinks[link.dataset.social]);
+    if (url.protocol !== 'https:' && url.protocol !== 'http:') return;
+    link.href = url.href;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.setAttribute('aria-label', `${name}（新しいタブで開く）`);
+    link.removeAttribute('aria-disabled');
+    link.title = name;
+  } catch (e) { /* URL未設定時はアイコンのみ表示 */ }
+});
 
 function setMenuOpen(open) {
   const isOpen = !!open;
