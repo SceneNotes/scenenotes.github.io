@@ -121,7 +121,7 @@ function renderGallery(category) {
 
 function renderAbout() {
   innerContent.innerHTML = `
-    <header class="inner-head"><span class="eyebrow">ABOUT / SCENE NOTES</span><h1>About</h1><p>A journal of the moments I want to remember.</p></header>
+    <header class="inner-head"><span class="eyebrow">ABOUT / SCENE NOTES</span><h1>About</h1><p>心に残る瞬間を、写真とともに綴るノート。</p></header>
     <div class="inner-divider"></div>
     <div class="about-layout">
       <div class="about-photo"><img src="./assets/landscape-wide.webp" alt="穏やかな朝の山並みと湖" loading="lazy"></div>
