@@ -104,7 +104,7 @@ function renderGallery(category) {
   const photos = group.photos;
   innerContent.innerHTML = `
     <header class="inner-head">
-      <span class="eyebrow">NOTEBOOK / ${group.number}</span>
+      <span class="eyebrow">PAGE / ${group.number}</span>
       <h1>${group.name}</h1>
       <p>${group.intro}</p>
     </header>
