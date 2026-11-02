@@ -44,6 +44,7 @@ const photoDialog = document.getElementById('photo-dialog');
 const dialogImage = document.getElementById('dialog-image');
 let activePhotos = [];
 let photoIndex = 0;
+let routeAnimation;
 
 function setTheme(theme) {
   const selected = theme === 'dark' ? 'dark' : 'light';
@@ -128,7 +129,17 @@ function renderRoute() {
   setMenuOpen(false);
   window.scrollTo({ top: 0, behavior:'instant' });
 }
-window.addEventListener('hashchange', renderRoute);
+window.addEventListener('hashchange', () => {
+  if (routeAnimation) routeAnimation.cancel();
+  renderRoute();
+  const content = document.getElementById('content');
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && content.animate) {
+    routeAnimation = content.animate(
+      [{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'translateY(0)' }],
+      { duration: 380, easing: 'ease-out' }
+    );
+  }
+});
 renderRoute();
 
 document.querySelectorAll('[data-year]').forEach(year => { year.textContent = new Date().getFullYear(); });
