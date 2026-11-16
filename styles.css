@@ -97,7 +97,7 @@ main { width: 100%; flex: 1; padding: 0 clamp(22px,3.6vw,58px) 42px; }
 .page { max-width: 1460px; margin: 0 auto; }
 .hero-image-wrap { width: 100%; overflow: hidden; background: var(--active); }
 .hero-image { display: block; width: 100%; height: clamp(290px,27vw,430px); object-fit: cover; object-position: center 50%; border-radius: 0; }
-.category-grid { margin-top: 18px; display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,210px),1fr)); gap: 16px; }
+.category-grid { margin-top: 18px; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
 .category-card { min-width: 0; min-height: 316px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 0; padding: 20px 20px 18px; border: 1px solid var(--line); border-radius: 0; background: var(--card); box-shadow: var(--sheet-shadow); color: var(--ink); text-decoration: none; transition: background-color .25s ease, box-shadow .25s ease, transform .25s ease, border-color .25s ease; }
 .category-card:hover { background: var(--card-hover); box-shadow: var(--shadow-hover); transform: translateY(-2px); }
 /* A loose sheet laid on the notebook: clean cut edges, a fine paper edge,
