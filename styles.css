@@ -209,6 +209,12 @@ main { width: 100%; flex: 1; padding: 0 clamp(22px,3.6vw,58px) 42px; }
   .dialog-caption { left:18px; right:18px; bottom:-90px; }
 }
 @media (min-width:801px) { .theme-button-mobile { display:none; } }
+/* Keep the large desktop surfaces and navigation in step on a theme change. */
+@media (min-width:801px) {
+  body { transition: color .28s ease; }
+  .sidebar { transition: transform .3s ease; }
+  .sidebar .nav-link { transition: none; }
+}
 @media (max-height:700px) and (min-width:801px) {
   .sidebar { padding-top:24px; padding-bottom:20px; }
   .side-navigation { margin-top:24px; }
