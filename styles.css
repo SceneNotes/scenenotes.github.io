@@ -215,6 +215,15 @@ main { width: 100%; flex: 1; padding: 0 clamp(22px,3.6vw,58px) 42px; }
   .sidebar { transition: transform .3s ease; }
   .sidebar .nav-link { transition: none; }
 }
+/* Capture the new theme immediately, then let the browser crossfade the view. */
+html.theme-updating * { transition: none !important; }
+html.theme-updating .theme-thumb { transition: transform .25s ease !important; }
+::view-transition, ::view-transition-group(root), ::view-transition-image-pair(root),
+::view-transition-old(root), ::view-transition-new(root) { pointer-events: none; }
+::view-transition-group(root), ::view-transition-old(root), ::view-transition-new(root) {
+  animation-duration: .32s;
+  animation-timing-function: ease;
+}
 @media (max-height:700px) and (min-width:801px) {
   .sidebar { padding-top:24px; padding-bottom:20px; }
   .side-navigation { margin-top:24px; }

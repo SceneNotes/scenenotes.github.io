@@ -87,7 +87,31 @@ function setTheme(theme) {
   try { localStorage.setItem('scene-notes-theme', selected); } catch (e) { /* private window */ }
 }
 setTheme(document.documentElement.dataset.theme);
-themeToggles.forEach(toggle => toggle.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark')));
+let desiredTheme = document.documentElement.dataset.theme;
+let themeTransition;
+function toggleTheme() {
+  desiredTheme = desiredTheme === 'dark' ? 'light' : 'dark';
+  if (themeTransition) themeTransition.skipTransition();
+
+  const canFade = window.matchMedia('(min-width: 801px)').matches &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+    typeof document.startViewTransition === 'function';
+  if (!canFade) {
+    setTheme(desiredTheme);
+    return;
+  }
+
+  themeTransition = document.startViewTransition(() => {
+    document.documentElement.classList.add('theme-updating');
+    setTheme(desiredTheme);
+    // Apply the new colors before restoring hover and switch transitions.
+    void document.body.offsetWidth;
+    document.documentElement.classList.remove('theme-updating');
+  });
+  themeTransition.ready.catch(() => {});
+  themeTransition.finished.catch(() => {});
+}
+themeToggles.forEach(toggle => toggle.addEventListener('click', toggleTheme));
 
 document.querySelectorAll('[data-social]').forEach(link => {
   const name = link.dataset.social === 'github' ? 'GitHub' : 'Instagram';
