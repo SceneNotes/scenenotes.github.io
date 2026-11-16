@@ -18,17 +18,44 @@ const galleries = {
       { src: './assets/landscape-03.webp', title: '山を映す水辺', alt: '湖畔から望む雪山' }
     ]
   },
+  birds: {
+    name: 'Birds', label: '野鳥', number: '02',
+    intro: '空や水辺、森で出会った野鳥たち。季節の光の中で見せる、静かな表情と一瞬の動きを集めました。',
+    photos: [
+      { src: './assets/wildlife-02.webp', title: '森の気配', alt: '森の中で出会った野生の生きもの' },
+      { src: './assets/landscape-03.webp', title: '水辺の朝', alt: '静かな水辺と雪山の風景' },
+      { src: './assets/landscape-wide.webp', title: '朝の空', alt: '朝もやが漂う山岳湖と空' }
+    ]
+  },
   animals: {
-    name: 'Animals', label: '動物', number: '02',
-    intro: '身近な動物から野生の生きものまで、さまざまな表情や心に残る瞬間を集めました。',
+    name: 'Animals', label: '動物', number: '03',
+    intro: '野鳥を除く身近な動物や野生の生きものたち。さまざまな表情や心に残る瞬間を集めました。',
     photos: [
       { src: './assets/wildlife.webp', title: '草原のシカ', alt: '柔らかな光の中に佇むシカ' },
       { src: './assets/wildlife-02.webp', title: '森での出会い', alt: '林の中に立つ角のあるシカ' },
       { src: './assets/wildlife-03.webp', title: '野生のまなざし', alt: '岩場に佇むキツネ' }
     ]
   },
+  plants: {
+    name: 'Plants', label: '植物', number: '04',
+    intro: '花や木々、季節とともに移ろう植物の姿。身近な自然の色やかたちを静かに記録しました。',
+    photos: [
+      { src: './assets/landscape.webp', title: '湖畔の緑', alt: '森に囲まれた湖と山並み' },
+      { src: './assets/landscape-02.webp', title: '季節の森', alt: '淡い光に包まれた山と森' },
+      { src: './assets/landscape-03.webp', title: '水辺の木々', alt: '湖畔から望む木々と雪山' }
+    ]
+  },
+  astro: {
+    name: 'Astro', label: '天体', number: '05',
+    intro: '月や星、夜明けの空。遠い光がつくる静かな時間と、見上げた空の記憶を集めました。',
+    photos: [
+      { src: './assets/hero.webp', title: '夜明けの光', alt: '山並みと谷を照らす穏やかな日の出' },
+      { src: './assets/landscape-wide.webp', title: '空が明ける頃', alt: '朝もやが漂う山岳湖と空' },
+      { src: './assets/landscape-02.webp', title: '遠い光', alt: '淡い光に包まれた山と湖' }
+    ]
+  },
   objects: {
-    name: 'Objects', label: 'ものたち', number: '03',
+    name: 'Objects', label: 'モノ', number: '06',
     intro: '日常の中で出会う、心に残るものたち。小さな物語のある静物を集めました。',
     photos: [
       { src: './assets/objects.webp', title: '窓辺のカメラ', alt: '木の机の上に置かれたフィルムカメラ' },
@@ -126,7 +153,7 @@ function renderAbout() {
     <div class="inner-divider"></div>
     <div class="about-layout">
       <div class="about-photo"><img src="./assets/landscape-wide.webp" alt="穏やかな朝の山並みと湖" loading="lazy"></div>
-      <div class="about-copy"><h2>心に残った景色を、<br>そっと記録する。</h2><p>Scene Notes は、風景、動物、日常のものたちを写真で綴る小さなノートです。<br>ページをめくるように、気になったカテゴリーからゆっくり眺めてください。</p><p>このサイトの写真と文章はサンプルです。公開するときに、ご自身の作品や紹介文に差し替えられます。</p></div>
+      <div class="about-copy"><h2>心に残った景色を、<br>そっと記録する。</h2><p>Scene Notes は、風景、野鳥、動物、植物、天体、日常のモノを写真で綴る小さなノートです。<br>ページをめくるように、気になったカテゴリーからゆっくり眺めてください。</p><p>このサイトの写真と文章はサンプルです。公開するときに、ご自身の作品や紹介文に差し替えられます。</p></div>
     </div>${backLink}`;
 }
 
